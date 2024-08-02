@@ -26,3 +26,8 @@ export async function createWarehouse(name, location) {
     );
     return rows;
 }
+
+export async function deleteWarehouse(id) {
+    const [rows] = await pool.query("DELETE FROM warehouses WHERE id = ?", [id]);
+    return rows;
+}
